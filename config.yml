@@ -1,0 +1,28 @@
+# 该插件由 幻猪(Mg_P) 制作
+
+world:
+  all:
+  - 7
+  - 46
+  place: []
+  breaks: []
+  pickup: []
+  click: []
+  interaction: []
+  fly: false
+world_nether:
+  all: []
+  place: []
+  breaks: []
+  pickup: []
+  click: []
+  interaction: []
+  fly: false
+world_the_end:
+  all: []
+  place: []
+  breaks: []
+  pickup: []
+  click: []
+  interaction: []
+  fly: false

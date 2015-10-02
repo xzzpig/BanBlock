@@ -1,0 +1,21 @@
+name: Banblock
+main: com.github.xzzpig.banblock.Main
+version: 0.1
+author: Mg_P
+commands:
+  banblock:
+    description: Banblock的主命令,输入/bb help 查看帮助
+    aliases: [banb,bb]
+permissions:
+  banblock.admin:
+    description: Banblock的管理员权限
+    default: op
+  banblock.ignore.*:
+    description: 忽略所有禁止
+    default: op
+  banblock.ignore.<type>:
+    description: 忽略指定种类禁止
+    default: op
+  banblock.ignore.<type>.<world>:
+    description: 忽略指定世界的指定种类禁止
+    default: op
