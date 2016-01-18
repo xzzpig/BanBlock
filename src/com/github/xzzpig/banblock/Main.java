@@ -13,36 +13,36 @@ public class Main extends JavaPlugin {
 	
 	//public final BanBlockListener bl = new BanBlockListener(this);
 	
-	//²å¼şµ÷ÓÃº¯Êı
+	//æ’ä»¶è°ƒç”¨å‡½æ•°
 	@Override
 	public void onEnable() {
-	getLogger().info(getName()+"²å¼şÒÑ±»¼ÓÔØ");
+	getLogger().info(getName()+"æ’ä»¶å·²è¢«åŠ è½½");
 	getServer().getPluginManager().registerEvents(new BanBlockListener(), this);
 	this.saveDefaultConfig();
 	getconfigs();
 	saveconfigs(false);
 	}
 	
-	//²å¼şÍ£ÓÃº¯Êı
+	//æ’ä»¶åœç”¨å‡½æ•°
 	@Override
 	public void onDisable() {
-	getLogger().info(getName()+"²å¼şÒÑ±»Í£ÓÃ ");
+	getLogger().info(getName()+"æ’ä»¶å·²è¢«åœç”¨ ");
 	saveconfigs(true);
 	}
     
-    //²å¼şÃüÁîÅĞ¶Ï
+    //æ’ä»¶å‘½ä»¤åˆ¤æ–­
     @SuppressWarnings("deprecation")
 	@Override
     public boolean onCommand(CommandSender sender,Command cmd,String label,String[] args)  {
     	if(label.equalsIgnoreCase("banblock")|label.equalsIgnoreCase("banb")|label.equalsIgnoreCase("bb")){
-			if (!(sender instanceof Player)){//¿ØÖÆÌ¨
-    			sender.sendMessage("¡ì6[Banblock]¡ì4¿ØÖÆÌ¨ÎŞ·¨¸Ã²å¼şµÄÈÎºÎÃüÁî:");
-    			sender.sendMessage("¡ì6[Banblock]¡ì7help:");	
-    			sender.sendMessage("¡ì6[Banblock]¡ì7/<command> add <type> <world> - ½ûÖ¹¶ÔÎïÆ·µÄÌØ¶¨²Ù×÷");
-    			sender.sendMessage("¡ì6[Banblock]¡ì7/<command> set fly [true|false] <world> - ½ûÖ¹ÔÚÄ³ÊÀ½ç·ÉĞĞ");
-    			sender.sendMessage("¡ì6[Banblock]¡ì7/<command> remove <type> <world> - ÔÊĞí¶ÔÎïÆ·µÄÌØ¶¨²Ù×÷");
-    			sender.sendMessage("¡ì6[Banblock]¡ì7/<command> reload - ÖØÔØ²å¼şÅäÖÃ");
-    			sender.sendMessage("¡ì6[Banblock]¡ì7 <world>Ä¬ÈÏµ±Ç°ÊÀ½ç");		
+			if (!(sender instanceof Player)){//æ§åˆ¶å°
+    			sender.sendMessage("Â§6[Banblock]Â§4æ§åˆ¶å°æ— æ³•è¯¥æ’ä»¶çš„ä»»ä½•å‘½ä»¤:");
+    			sender.sendMessage("Â§6[Banblock]Â§7help:");	
+    			sender.sendMessage("Â§6[Banblock]Â§7/<command> add <type> <world> - ç¦æ­¢å¯¹ç‰©å“çš„ç‰¹å®šæ“ä½œ");
+    			sender.sendMessage("Â§6[Banblock]Â§7/<command> set fly [true|false] <world> - ç¦æ­¢åœ¨æŸä¸–ç•Œé£è¡Œ");
+    			sender.sendMessage("Â§6[Banblock]Â§7/<command> remove <type> <world> - å…è®¸å¯¹ç‰©å“çš„ç‰¹å®šæ“ä½œ");
+    			sender.sendMessage("Â§6[Banblock]Â§7/<command> reload - é‡è½½æ’ä»¶é…ç½®");
+    			sender.sendMessage("Â§6[Banblock]Â§7 <world>é»˜è®¤å½“å‰ä¸–ç•Œ");		
     			sendtype(sender);
     			return true;
 			}
@@ -77,16 +77,16 @@ public class Main extends JavaPlugin {
 
     		}
     		if(!player.hasPermission("banblock.admin")){
-    			sender.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÊÇop »ò Ã»ÓĞÈ¨ÏŞ:banblack.admin");
+    			sender.sendMessage("Â§6[Banblock]Â§4ä½ ä¸æ˜¯op æˆ– æ²¡æœ‰æƒé™:banblack.admin");
     			return true;
     		}
     		//help
     		if (action.equalsIgnoreCase("help")) {
-    			sender.sendMessage("¡ì6[Banblock]¡ì7/<command> add <type> <world> - ½ûÖ¹¶ÔÎïÆ·µÄÌØ¶¨²Ù×÷");
-    			sender.sendMessage("¡ì6[Banblock]¡ì7/<command> set fly [true|false] <world> - ½ûÖ¹ÔÚÄ³ÊÀ½ç·ÉĞĞ");
-    			sender.sendMessage("¡ì6[Banblock]¡ì7/<command> remove <type> <world> - ÔÊĞí¶ÔÎïÆ·µÄÌØ¶¨²Ù×÷");
-    			sender.sendMessage("¡ì6[Banblock]¡ì7/<command> reload - ÖØÔØ²å¼şÅäÖÃ");
-    			sender.sendMessage("¡ì6[Banblock]¡ì7 <world>Ä¬ÈÏµ±Ç°ÊÀ½ç");		
+    			sender.sendMessage("Â§6[Banblock]Â§7/<command> add <type> <world> - ç¦æ­¢å¯¹ç‰©å“çš„ç‰¹å®šæ“ä½œ");
+    			sender.sendMessage("Â§6[Banblock]Â§7/<command> set fly [true|false] <world> - ç¦æ­¢åœ¨æŸä¸–ç•Œé£è¡Œ");
+    			sender.sendMessage("Â§6[Banblock]Â§7/<command> remove <type> <world> - å…è®¸å¯¹ç‰©å“çš„ç‰¹å®šæ“ä½œ");
+    			sender.sendMessage("Â§6[Banblock]Â§7/<command> reload - é‡è½½æ’ä»¶é…ç½®");
+    			sender.sendMessage("Â§6[Banblock]Â§7 <world>é»˜è®¤å½“å‰ä¸–ç•Œ");		
     			sendtype(sender);
     			return true;
     		}
@@ -99,16 +99,16 @@ public class Main extends JavaPlugin {
     					all = Vars.all.get(world);    							
     				}
     				else{
-    					sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+    					sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
     					return true;
     				}
     				if (all.contains(id))
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑÔÚ"+ world +"µÄallÖĞ");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åœ¨"+ world +"çš„allä¸­");
     				else{    						
     					all.add(id);
     					this.getConfig().set(world + ".all", all);
-    					getLogger().info(world + "µÄall½ûÖ¹ÁĞ±íÒÑ±£´æ");
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ¼ÓÈëµ½"+ world +"µÄallÖĞ");
+    					getLogger().info(world + "çš„allç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åŠ å…¥åˆ°"+ world +"çš„allä¸­");
     					saveconfigs(false);
     				}
     			}
@@ -119,16 +119,16 @@ public class Main extends JavaPlugin {
     					place = Vars.place.get(world);    							
     				}
     				else{
-    					sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+    					sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
     					return true;
     				}
     				if (place.contains(id))
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑÔÚ"+ world +"µÄplaceÖĞ");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åœ¨"+ world +"çš„placeä¸­");
     				else{    						
     					place.add(id);
     					this.getConfig().set(world + ".place", place);
-    					getLogger().info(world + "µÄplace½ûÖ¹ÁĞ±íÒÑ±£´æ");
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ¼ÓÈëµ½"+ world +"µÄplaceÖĞ");
+    					getLogger().info(world + "çš„placeç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åŠ å…¥åˆ°"+ world +"çš„placeä¸­");
     					saveconfigs(false);
     				}
     			}    			
@@ -139,16 +139,16 @@ public class Main extends JavaPlugin {
     					breaks = Vars.breaks.get(world);    							
     				}
     				else{
-    					sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+    					sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
     					return true;
     				}
     				if (breaks.contains(id))
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑÔÚ"+ world +"µÄbreaksÖĞ");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åœ¨"+ world +"çš„breaksä¸­");
     				else{    						
     					breaks.add(id);
     					this.getConfig().set(world + ".breaks", breaks);
-    					getLogger().info(world + "µÄbreaks½ûÖ¹ÁĞ±íÒÑ±£´æ");
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ¼ÓÈëµ½"+ world +"µÄbreaksÖĞ");
+    					getLogger().info(world + "çš„breaksç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åŠ å…¥åˆ°"+ world +"çš„breaksä¸­");
     					saveconfigs(false);
     				}
     			}
@@ -159,16 +159,16 @@ public class Main extends JavaPlugin {
     					pickup = Vars.pickup.get(world);    							
     				}
     				else{
-    					sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+    					sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
     					return true;
     				}
     				if (pickup.contains(id))
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑÔÚ"+ world +"µÄpickupÖĞ");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åœ¨"+ world +"çš„pickupä¸­");
     				else{    						
     					pickup.add(id);
     					this.getConfig().set(world + ".pickup", pickup);
-    					getLogger().info(world + "µÄpickup½ûÖ¹ÁĞ±íÒÑ±£´æ");
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ¼ÓÈëµ½"+ world +"µÄpickupÖĞ");
+    					getLogger().info(world + "çš„pickupç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åŠ å…¥åˆ°"+ world +"çš„pickupä¸­");
     					saveconfigs(false);
     				}
     			}
@@ -179,16 +179,16 @@ public class Main extends JavaPlugin {
     					click = Vars.click.get(world);    							
     				}
     				else{
-    					sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+    					sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
     					return true;
     				}
     				if (click.contains(id))
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑÔÚ"+ world +"µÄclickÖĞ");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åœ¨"+ world +"çš„clickä¸­");
     				else{    						
     					click.add(id);
     					this.getConfig().set(world + ".click", click);
-    					getLogger().info(world + "µÄclick½ûÖ¹ÁĞ±íÒÑ±£´æ");
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ¼ÓÈëµ½"+ world +"µÄclickÖĞ");
+    					getLogger().info(world + "çš„clickç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åŠ å…¥åˆ°"+ world +"çš„clickä¸­");
     					saveconfigs(false);
     				}
     			}
@@ -199,21 +199,21 @@ public class Main extends JavaPlugin {
     					interaction = Vars.interaction.get(world);    							
     				}
     				else{
-    					sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+    					sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
     					return true;
     				}
     				if (interaction.contains(id))
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑÔÚ"+ world +"µÄinteractionÖĞ");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åœ¨"+ world +"çš„interactionä¸­");
     				else{    						
     					interaction.add(id);
     					this.getConfig().set(world + ".interaction", interaction);
-    					getLogger().info(world + "µÄinteraction½ûÖ¹ÁĞ±íÒÑ±£´æ");
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ¼ÓÈëµ½"+ world +"µÄinteractionÖĞ");
+    					getLogger().info(world + "çš„interactionç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²åŠ å…¥åˆ°"+ world +"çš„interactionä¸­");
     					saveconfigs(false);
     				}
     			}
     			else{
-    				sender.sendMessage("¡ì6[Banblock]¡ì4Î´ÖªµÄ<type>");
+    				sender.sendMessage("Â§6[Banblock]Â§4æœªçŸ¥çš„<type>");
     				sendtype(sender);
     			}
     				
@@ -231,29 +231,29 @@ public class Main extends JavaPlugin {
     				if(Vars.fly.containsKey(world2)){
     					if(args[2].equalsIgnoreCase("true")){
     						Vars.fly.put(world2, true);   
-    						player.sendMessage("¡ì6[Banblock]¡ì7"+ world2 +"µÄflyÒÑÉèÖÃÎªtrue");
+    						player.sendMessage("Â§6[Banblock]Â§7"+ world2 +"çš„flyå·²è®¾ç½®ä¸ºtrue");
     					}
     					else if(args[2].equalsIgnoreCase("false")){
     						Vars.fly.put(world2, false);
-    						player.sendMessage("¡ì6[Banblock]¡ì7"+ world2 +"µÄflyÒÑÉèÖÃÎªfalse");
+    						player.sendMessage("Â§6[Banblock]Â§7"+ world2 +"çš„flyå·²è®¾ç½®ä¸ºfalse");
     					}
     					else{
     						Vars.fly.put(world2, false);
-    						player.sendMessage("¡ì6[Banblock]¡ì7"+ world2 +"µÄflyÒÑÉèÖÃÎªfalse");	
+    						player.sendMessage("Â§6[Banblock]Â§7"+ world2 +"çš„flyå·²è®¾ç½®ä¸ºfalse");	
     					}
         				saveconfigs(false);
     					return true;
     					
     				}
     				else{
-    					sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+    					sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
     					return true;
     				}
     			}
     			else{
-    				sender.sendMessage("¡ì6[Banblock]¡ì4Î´ÖªµÄ<type>");
-    				sender.sendMessage("¡ì6[Banblock]¡ì7 <type>ÀàĞÍ£º");
-    				sender.sendMessage("¡ìf - fly"); 
+    				sender.sendMessage("Â§6[Banblock]Â§4æœªçŸ¥çš„<type>");
+    				sender.sendMessage("Â§6[Banblock]Â§7 <type>ç±»å‹ï¼š");
+    				sender.sendMessage("Â§f - fly"); 
     			}
     		}
     		//remove
@@ -265,15 +265,15 @@ public class Main extends JavaPlugin {
 						all = Vars.all.get(world);    							
 					}
 					else{
-		    			sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+		    			sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
 						return true;
 					}
     				if (all.contains(id)){
     					removeid(id, world, type);
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ´ÓallÖĞÒÆ³ı");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²ä»allä¸­ç§»é™¤");
     				}
     				else
-    					player.sendMessage("¡ì6[Banblock]¡ì7ÅäÖÃÖĞ²»´æÔÚ¸Ãid");
+    					player.sendMessage("Â§6[Banblock]Â§7é…ç½®ä¸­ä¸å­˜åœ¨è¯¥id");
     			}
     			else if (type.equalsIgnoreCase("place")){
     				int id = player.getItemInHand().getTypeId();
@@ -282,15 +282,15 @@ public class Main extends JavaPlugin {
 						place = Vars.place.get(world);    							
 					}
 					else{
-		    			sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+		    			sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
 						return true;
 					}
     				if (place.contains(id)){
     					removeid(id, world, type);
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ´ÓplaceÖĞÒÆ³ı");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²ä»placeä¸­ç§»é™¤");
     				}
     				else
-    					player.sendMessage("¡ì6[Banblock]¡ì7ÅäÖÃÖĞ²»´æÔÚ¸Ãid");
+    					player.sendMessage("Â§6[Banblock]Â§7é…ç½®ä¸­ä¸å­˜åœ¨è¯¥id");
     			}
     			else if (type.equalsIgnoreCase("breaks")){
     				int id = player.getItemInHand().getTypeId();
@@ -299,15 +299,15 @@ public class Main extends JavaPlugin {
 						breaks = Vars.breaks.get(world);    							
 					}
 					else{
-		    			sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+		    			sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
 						return true;
 					}
     				if (breaks.contains(id)){
     					removeid(id, world, type);
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ´ÓbreaksÖĞÒÆ³ı");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²ä»breaksä¸­ç§»é™¤");
     				}
     				else
-    					player.sendMessage("¡ì6[Banblock]¡ì7ÅäÖÃÖĞ²»´æÔÚ¸Ãid");
+    					player.sendMessage("Â§6[Banblock]Â§7é…ç½®ä¸­ä¸å­˜åœ¨è¯¥id");
     			}
     			else if (type.equalsIgnoreCase("pickup")){
     				int id = player.getItemInHand().getTypeId();
@@ -316,15 +316,15 @@ public class Main extends JavaPlugin {
 						pickup = Vars.pickup.get(world);    							
 					}
 					else{
-		    			sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+		    			sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
 						return true;
 					}
     				if (pickup.contains(id)){
     					removeid(id, world, type);
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ´ÓpickupÖĞÒÆ³ı");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²ä»pickupä¸­ç§»é™¤");
     				}
     				else
-    					player.sendMessage("¡ì6[Banblock]¡ì7ÅäÖÃÖĞ²»´æÔÚ¸Ãid");
+    					player.sendMessage("Â§6[Banblock]Â§7é…ç½®ä¸­ä¸å­˜åœ¨è¯¥id");
     			}
     			else if (type.equalsIgnoreCase("click")){
     				int id = player.getItemInHand().getTypeId();
@@ -333,15 +333,15 @@ public class Main extends JavaPlugin {
 						click = Vars.click.get(world);    							
 					}
 					else{
-		    			sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+		    			sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
 						return true;
 					}
     				if (click.contains(id)){
     					removeid(id, world, type);
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ´ÓclickÖĞÒÆ³ı");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²ä»clickä¸­ç§»é™¤");
     				}
     				else
-    					player.sendMessage("¡ì6[Banblock]¡ì7ÅäÖÃÖĞ²»´æÔÚ¸Ãid");
+    					player.sendMessage("Â§6[Banblock]Â§7é…ç½®ä¸­ä¸å­˜åœ¨è¯¥id");
     			}
     			else if (type.equalsIgnoreCase("interaction")){
     				int id = player.getItemInHand().getTypeId();
@@ -350,28 +350,28 @@ public class Main extends JavaPlugin {
 						interaction = Vars.interaction.get(world);    							
 					}
 					else{
-		    			sender.sendMessage("¡ì6[Banblock]¡ì4¸Ãworld²»´æÔÚ");
+		    			sender.sendMessage("Â§6[Banblock]Â§4è¯¥worldä¸å­˜åœ¨");
 						return true;
 					}
     				if (interaction.contains(id)){
     					removeid(id, world, type);
-    					player.sendMessage("¡ì6[Banblock]¡ì7"+player.getItemInHand().getType().name() + "ÒÑ´ÓinteractionÖĞÒÆ³ı");
+    					player.sendMessage("Â§6[Banblock]Â§7"+player.getItemInHand().getType().name() + "å·²ä»interactionä¸­ç§»é™¤");
     				}
     				else
-    					player.sendMessage("¡ì6[Banblock]¡ì7ÅäÖÃÖĞ²»´æÔÚ¸Ãid");
+    					player.sendMessage("Â§6[Banblock]Â§7é…ç½®ä¸­ä¸å­˜åœ¨è¯¥id");
     			}
     			else{
-    				sender.sendMessage("¡ì6[Banblock]¡ì4Î´ÖªµÄ<type>");
+    				sender.sendMessage("Â§6[Banblock]Â§4æœªçŸ¥çš„<type>");
         			sendtype(sender);
     			}
     		}
     		//reload
     		else if (action.equalsIgnoreCase("reload")) {
     			getconfigs();
-				player.sendMessage("¡ì6[Banblock]¡ì7²å¼şÅäÖÃÒÑÖØÔØ");
+				player.sendMessage("Â§6[Banblock]Â§7æ’ä»¶é…ç½®å·²é‡è½½");
     		}
     		else{
-				player.sendMessage("¡ì4ÊäÈë/bb help ²é¿´°ïÖú");
+				player.sendMessage("Â§4è¾“å…¥/bb help æŸ¥çœ‹å¸®åŠ©");
     	    	return false;    			
     		}
     	}
@@ -384,46 +384,46 @@ public class Main extends JavaPlugin {
     		 java.util.List<Integer> all = this.getConfig().getIntegerList(testworld.getName() + ".all");
     		 if (all != null){
     			 Vars.all.put(testworld.getName(), all);  
-    			 getLogger().info(testworld.getName() + "µÄall½ûÖ¹ÁĞ±íÒÑ¼ÓÔØ");   			 
+    			 getLogger().info(testworld.getName() + "çš„allç¦æ­¢åˆ—è¡¨å·²åŠ è½½");   			 
     		 }
     		 
     		 java.util.List<Integer> place = this.getConfig().getIntegerList(testworld.getName() + ".place");
     		 if (place != null){
     			 Vars.place.put(testworld.getName(), place);  
-    			 getLogger().info(testworld.getName() + "µÄplace½ûÖ¹ÁĞ±íÒÑ¼ÓÔØ");
+    			 getLogger().info(testworld.getName() + "çš„placeç¦æ­¢åˆ—è¡¨å·²åŠ è½½");
     		 }    		 
     		 
     		 java.util.List<Integer> breaks = this.getConfig().getIntegerList(testworld.getName() + ".breaks");
     		 if (breaks != null){
     			 Vars.breaks.put(testworld.getName(), breaks);  
-    			 getLogger().info(testworld.getName() + "µÄbreaks½ûÖ¹ÁĞ±íÒÑ¼ÓÔØ");
+    			 getLogger().info(testworld.getName() + "çš„breaksç¦æ­¢åˆ—è¡¨å·²åŠ è½½");
     		 }
     		 
     		 java.util.List<Integer> pickup = this.getConfig().getIntegerList(testworld.getName() + ".pickup");
     		 if (pickup != null){
     			 Vars.pickup.put(testworld.getName(), pickup);  
-    			 getLogger().info(testworld.getName() + "µÄpickup½ûÖ¹ÁĞ±íÒÑ¼ÓÔØ");
+    			 getLogger().info(testworld.getName() + "çš„pickupç¦æ­¢åˆ—è¡¨å·²åŠ è½½");
     		 }
     		 
     		 java.util.List<Integer> click = this.getConfig().getIntegerList(testworld.getName() + ".click");
     		 if (click != null){
     			 Vars.click.put(testworld.getName(), click);  
-    			 getLogger().info(testworld.getName() + "µÄclick½ûÖ¹ÁĞ±íÒÑ¼ÓÔØ");
+    			 getLogger().info(testworld.getName() + "çš„clickç¦æ­¢åˆ—è¡¨å·²åŠ è½½");
     		 }
     		 
     		 java.util.List<Integer> interaction = this.getConfig().getIntegerList(testworld.getName() + ".interaction");
     		 if (interaction != null){
     			 Vars.interaction.put(testworld.getName(), interaction);  
-    			 getLogger().info(testworld.getName() + "µÄinteraction½ûÖ¹ÁĞ±íÒÑ¼ÓÔØ");
+    			 getLogger().info(testworld.getName() + "çš„interactionç¦æ­¢åˆ—è¡¨å·²åŠ è½½");
     		 }
     		 
     		 boolean fly = this.getConfig().getBoolean(testworld.getName()+ ".fly");
     		 Vars.fly.put(testworld.getName(), fly);  
-    		 getLogger().info(testworld.getName() + "µÄflyÉèÖÃÁĞ±íÒÑ¼ÓÔØ");
+    		 getLogger().info(testworld.getName() + "çš„flyè®¾ç½®åˆ—è¡¨å·²åŠ è½½");
     		 if(fly)
-        		 getLogger().info(testworld.getName() + "µÄflyÉèÖÃÎªtrue");
+        		 getLogger().info(testworld.getName() + "çš„flyè®¾ç½®ä¸ºtrue");
     		 else
-        		 getLogger().info(testworld.getName() + "µÄflyÉèÖÃÎªfalse");
+        		 getLogger().info(testworld.getName() + "çš„flyè®¾ç½®ä¸ºfalse");
     	}
     }
     
@@ -434,37 +434,37 @@ public class Main extends JavaPlugin {
     		java.util.List<Integer> all = Vars.all.get(saveworld.getName());
     		this.getConfig().set(saveworld.getName() + ".all", all);
     		if(print)
-    			getLogger().info(saveworld.getName() + "µÄall½ûÖ¹ÁĞ±íÒÑ±£´æ");
+    			getLogger().info(saveworld.getName() + "çš„allç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
     		
     		java.util.List<Integer> place = Vars.place.get(saveworld.getName());
     		this.getConfig().set(saveworld.getName() + ".place", place);
     		if(print)
-    			getLogger().info(saveworld.getName() + "µÄplace½ûÖ¹ÁĞ±íÒÑ±£´æ");
+    			getLogger().info(saveworld.getName() + "çš„placeç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
     	
     		java.util.List<Integer> breaks = Vars.breaks.get(saveworld.getName());
     		this.getConfig().set(saveworld.getName() + ".breaks", breaks);
     		if(print)
-    			getLogger().info(saveworld.getName() + "µÄbreaks½ûÖ¹ÁĞ±íÒÑ±£´æ");
+    			getLogger().info(saveworld.getName() + "çš„breaksç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
         	
     		java.util.List<Integer> pickup = Vars.pickup.get(saveworld.getName());
     		this.getConfig().set(saveworld.getName() + ".pickup", pickup);
     		if(print)
-    			getLogger().info(saveworld.getName() + "µÄpickup½ûÖ¹ÁĞ±íÒÑ±£´æ");
+    			getLogger().info(saveworld.getName() + "çš„pickupç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
         	
     		java.util.List<Integer> click = Vars.click.get(saveworld.getName());
     		this.getConfig().set(saveworld.getName() + ".click", click);
     		if(print)
-    			getLogger().info(saveworld.getName() + "µÄclick½ûÖ¹ÁĞ±íÒÑ±£´æ");
+    			getLogger().info(saveworld.getName() + "çš„clickç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
         	
     		java.util.List<Integer> interaction = Vars.interaction.get(saveworld.getName());
     		this.getConfig().set(saveworld.getName() + ".interaction", interaction);
     		if(print)
-    			getLogger().info(saveworld.getName() + "µÄinteraction½ûÖ¹ÁĞ±íÒÑ±£´æ");
+    			getLogger().info(saveworld.getName() + "çš„interactionç¦æ­¢åˆ—è¡¨å·²ä¿å­˜");
     		
     		Boolean fly = Vars.fly.get(saveworld.getName());
     		this.getConfig().set(saveworld.getName() + ".fly", fly);
     		if(print)
-    			getLogger().info(saveworld.getName() + "µÄflyÉèÖÃÁĞ±íÒÑ±£´æ");
+    			getLogger().info(saveworld.getName() + "çš„flyè®¾ç½®åˆ—è¡¨å·²ä¿å­˜");
     		
     	}
     	this.saveConfig();
@@ -558,14 +558,14 @@ public class Main extends JavaPlugin {
     }
 
     void sendtype(CommandSender sender){
-		sender.sendMessage("¡ì6[Banblock]¡ì7 <type>ÀàĞÍ£º");
-		sender.sendMessage("¡ìf - all(Ä¬ÈÏ)"); 
-		sender.sendMessage("¡ìf - place"); 
-		sender.sendMessage("¡ìf - breaks"); 
-		sender.sendMessage("¡ìf - pickup"); 
-		sender.sendMessage("¡ìf - click"); 
-		sender.sendMessage("¡ìf - interaction"); 
-		sender.sendMessage("¡ìf - fly"); 
+		sender.sendMessage("Â§6[Banblock]Â§7 <type>ç±»å‹ï¼š");
+		sender.sendMessage("Â§f - all(é»˜è®¤)"); 
+		sender.sendMessage("Â§f - place"); 
+		sender.sendMessage("Â§f - breaks"); 
+		sender.sendMessage("Â§f - pickup"); 
+		sender.sendMessage("Â§f - click"); 
+		sender.sendMessage("Â§f - interaction"); 
+		sender.sendMessage("Â§f - fly"); 
 
     }
 }

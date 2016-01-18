@@ -28,25 +28,25 @@ public class BanBlockListener implements Listener {
 					player.hasPermission("banblock.ignore.all."+world_s)||
 					player.hasPermission("banblock.ignore.place."+world_s))
 				{
-					player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-					player.sendMessage("¡ì6[Banblock]¡ì4Äã·ÅÖÃÁË·½¿é:¡ìe"+ blocked.name()+"("+blocked.getId()+")");
-					player.sendMessage("¡ì6[Banblock]¡ì4´Ë·½¿éÔÚ ¡ì6Banblock ¡ì4µÄ½ûÖ¹ÁĞ±íÖĞ");
+					player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+					player.sendMessage("Â§6[Banblock]Â§4ä½ æ”¾ç½®äº†æ–¹å—:Â§e"+ blocked.name()+"("+blocked.getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4æ­¤æ–¹å—åœ¨ Â§6Banblock Â§4çš„ç¦æ­¢åˆ—è¡¨ä¸­");
 				}
 				else{
 					event.setBuild(false);
-					player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜ·ÅÖÃÕâ·½¿é:¡ìe"+ blocked.name()+"("+blocked.getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½æ”¾ç½®è¿™æ–¹å—:Â§e"+ blocked.name()+"("+blocked.getId()+")");
 				}
 		}
 		//fly
 		if(player.getAllowFlight()&&Vars.fly.get(world_s)){
 			if (player.hasPermission("banblock.ignore.*")||player.hasPermission("banblock.ignore.all")||player.hasPermission("banblock.ignore.fly")||player.hasPermission("banblock.ignore.all."+world_s)||player.hasPermission("banblock.ignore.fly."+world_s)){
-				player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-				player.sendMessage("¡ì6[Banblock]¡ì4ÄãÔÚÊÀ½ç "+ world_s +" ÔÊĞí·ÉĞĞ");
-				player.sendMessage("¡ì6[Banblock]¡ì4´ËÊÀ½çÔÚ ¡ì6Banblock ¡ì4µÄ½û·ÉÁĞ±íÖĞ");
+				player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+				player.sendMessage("Â§6[Banblock]Â§4ä½ åœ¨ä¸–ç•Œ "+ world_s +" å…è®¸é£è¡Œ");
+				player.sendMessage("Â§6[Banblock]Â§4æ­¤ä¸–ç•Œåœ¨ Â§6Banblock Â§4çš„ç¦é£åˆ—è¡¨ä¸­");
 			}
 			else{
 				player.setAllowFlight(false);
-				player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜÔÚÊÀ½ç "+ world_s +" ·ÉĞĞ");
+				player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½åœ¨ä¸–ç•Œ "+ world_s +" é£è¡Œ");
 			}
 		}
 	}
@@ -60,25 +60,25 @@ public class BanBlockListener implements Listener {
 		Material blocked = event.getBlock().getType();
 		if(Vars.all.get(world_s).contains(blocked.getId())||Vars.breaks.get(world_s).contains(blocked.getId())){
 				if (player.hasPermission("banblock.ignore.*")||player.hasPermission("banblock.ignore.all")||player.hasPermission("banblock.ignore.breaks")||player.hasPermission("banblock.ignore.all."+world_s)||player.hasPermission("banblock.ignore.breaks."+world_s)){
-					player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-					player.sendMessage("¡ì6[Banblock]¡ì4ÄãÆÆ»µÁË·½¿é:¡ìe"+ blocked.name()+"("+blocked.getId()+")");
-					player.sendMessage("¡ì6[Banblock]¡ì4´Ë·½¿éÔÚ ¡ì6Banblock ¡ì4µÄ½ûÖ¹ÁĞ±íÖĞ");
+					player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+					player.sendMessage("Â§6[Banblock]Â§4ä½ ç ´åäº†æ–¹å—:Â§e"+ blocked.name()+"("+blocked.getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4æ­¤æ–¹å—åœ¨ Â§6Banblock Â§4çš„ç¦æ­¢åˆ—è¡¨ä¸­");
 				}
 				else{
 					event.setCancelled(true);
-					player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜÆÆ»µÕâ·½¿é:¡ìe"+ blocked.name()+"("+blocked.getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½ç ´åè¿™æ–¹å—:Â§e"+ blocked.name()+"("+blocked.getId()+")");
 				}
 		}
 		//fly
 		if(player.getAllowFlight()&&Vars.fly.get(world_s)){
 			if (player.hasPermission("banblock.ignore.*")||player.hasPermission("banblock.ignore.all")||player.hasPermission("banblock.ignore.fly")||player.hasPermission("banblock.ignore.all."+world_s)||player.hasPermission("banblock.ignore.fly."+world_s)){
-				player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-				player.sendMessage("¡ì6[Banblock]¡ì4ÄãÔÚÊÀ½ç "+ world_s +" ÔÊĞí·ÉĞĞ");
-				player.sendMessage("¡ì6[Banblock]¡ì4´ËÊÀ½çÔÚ ¡ì6Banblock ¡ì4µÄ½û·ÉÁĞ±íÖĞ");
+				player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+				player.sendMessage("Â§6[Banblock]Â§4ä½ åœ¨ä¸–ç•Œ "+ world_s +" å…è®¸é£è¡Œ");
+				player.sendMessage("Â§6[Banblock]Â§4æ­¤ä¸–ç•Œåœ¨ Â§6Banblock Â§4çš„ç¦é£åˆ—è¡¨ä¸­");
 			}
 			else{
 				player.setAllowFlight(false);
-				player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜÔÚÊÀ½ç "+ world_s +" ·ÉĞĞ");
+				player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½åœ¨ä¸–ç•Œ "+ world_s +" é£è¡Œ");
 			}
 		}
 	}
@@ -91,25 +91,25 @@ public class BanBlockListener implements Listener {
 		ItemStack item = event.getItem().getItemStack();
 		if(Vars.all.get(world_s).contains(item.getType().getId())||Vars.pickup.get(world_s).contains(item.getType().getId())){
 				if (player.hasPermission("banblock.ignore.*")||player.hasPermission("banblock.ignore.all")||player.hasPermission("banblock.ignore.pickup")||player.hasPermission("banblock.ignore.all."+world_s)||player.hasPermission("banblock.ignore.pickup."+world_s)){
-					player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-					player.sendMessage("¡ì6[Banblock]¡ì4Äã¼ñÆğÁËÎïÆ·:¡ìe"+"("+item.getType().getId()+")");
-					player.sendMessage("¡ì6[Banblock]¡ì4´ËÎïÆ·ÔÚ ¡ì6Banblock ¡ì4µÄ½ûÖ¹ÁĞ±íÖĞ");
+					player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+					player.sendMessage("Â§6[Banblock]Â§4ä½ æ¡èµ·äº†ç‰©å“:Â§e"+"("+item.getType().getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4æ­¤ç‰©å“åœ¨ Â§6Banblock Â§4çš„ç¦æ­¢åˆ—è¡¨ä¸­");
 				}
 				else{
 					event.setCancelled(true);
-					player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜ¼ñÆğÎïÆ·:¡ìe"+"("+item.getType().getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½æ¡èµ·ç‰©å“:Â§e"+"("+item.getType().getId()+")");
 				}
 		}
 		//fly
 		if(player.getAllowFlight()&&Vars.fly.get(world_s)){
 			if (player.hasPermission("banblock.ignore.*")||player.hasPermission("banblock.ignore.all")||player.hasPermission("banblock.ignore.fly")||player.hasPermission("banblock.ignore.all."+world_s)||player.hasPermission("banblock.ignore.fly."+world_s)){
-				player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-				player.sendMessage("¡ì6[Banblock]¡ì4ÄãÔÚÊÀ½ç "+ world_s +" ÔÊĞí·ÉĞĞ");
-				player.sendMessage("¡ì6[Banblock]¡ì4´ËÊÀ½çÔÚ ¡ì6Banblock ¡ì4µÄ½û·ÉÁĞ±íÖĞ");
+				player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+				player.sendMessage("Â§6[Banblock]Â§4ä½ åœ¨ä¸–ç•Œ "+ world_s +" å…è®¸é£è¡Œ");
+				player.sendMessage("Â§6[Banblock]Â§4æ­¤ä¸–ç•Œåœ¨ Â§6Banblock Â§4çš„ç¦é£åˆ—è¡¨ä¸­");
 			}
 			else{
 				player.setAllowFlight(false);
-				player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜÔÚÊÀ½ç "+ world_s +" ·ÉĞĞ");
+				player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½åœ¨ä¸–ç•Œ "+ world_s +" é£è¡Œ");
 			}
 		}
 	}
@@ -120,15 +120,17 @@ public class BanBlockListener implements Listener {
 		Player player = Bukkit.getPlayer(event.getWhoClicked().getName());
 		String world_s = player.getLocation().getWorld().getName();
 		ItemStack item = event.getCurrentItem();
+		if(item == null)
+			return;
 		if(Vars.all.get(world_s).contains(item.getType().getId())||Vars.click.get(world_s).contains(item.getType().getId())){
 				if (player.hasPermission("banblock.ignore.*")||player.hasPermission("banblock.ignore.all")||player.hasPermission("banblock.ignore.click")||player.hasPermission("banblock.ignore.all."+world_s)||player.hasPermission("banblock.ignore.click."+world_s)){
-					player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-					player.sendMessage("¡ì6[Banblock]¡ì4Äãµã»÷ÁËÎïÆ·:¡ìe"+"("+item.getType().getId()+")");
-					player.sendMessage("¡ì6[Banblock]¡ì4´ËÎïÆ·ÔÚ ¡ì6Banblock ¡ì4µÄ½ûÖ¹ÁĞ±íÖĞ");
+					player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+					player.sendMessage("Â§6[Banblock]Â§4ä½ ç‚¹å‡»äº†ç‰©å“:Â§e"+"("+item.getType().getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4æ­¤ç‰©å“åœ¨ Â§6Banblock Â§4çš„ç¦æ­¢åˆ—è¡¨ä¸­");
 				}
 				else{
 					event.setCancelled(true);
-					player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜµã»÷ÎïÆ·:¡ìe"+"("+item.getType().getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½ç‚¹å‡»ç‰©å“:Â§e"+"("+item.getType().getId()+")");
 				}
 		}
 	}
@@ -139,31 +141,31 @@ public class BanBlockListener implements Listener {
 		Player player = event.getPlayer();
 		String world_s = player.getLocation().getWorld().getName();
 		ItemStack item ;
-		if( player.getItemInHand().getTypeId()== 0)
+		if(event.getItem() == null|| player.getItemInHand().getTypeId()== 0)
 			return;
 		else
 			item = event.getItem();
 		if(Vars.all.get(world_s).contains(item.getType().getId())||Vars.pickup.get(world_s).contains(item.getType().getId())){
 				if (player.hasPermission("banblock.ignore.*")||player.hasPermission("banblock.ignore.all")||player.hasPermission("banblock.ignore.interaction")||player.hasPermission("banblock.ignore.all."+world_s)||player.hasPermission("banblock.ignore.interaction."+world_s)){
-					player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-					player.sendMessage("¡ì6[Banblock]¡ì4ÄãÊ¹ÓÃÁËÎïÆ·:¡ìe"+"("+item.getType().getId()+")");
-					player.sendMessage("¡ì6[Banblock]¡ì4´ËÎïÆ·ÔÚ ¡ì6Banblock ¡ì4µÄ½ûÖ¹ÁĞ±íÖĞ");
+					player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+					player.sendMessage("Â§6[Banblock]Â§4ä½ ä½¿ç”¨äº†ç‰©å“:Â§e"+"("+item.getType().getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4æ­¤ç‰©å“åœ¨ Â§6Banblock Â§4çš„ç¦æ­¢åˆ—è¡¨ä¸­");
 				}
 				else{
 					event.setCancelled(true);
-					player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜÊ¹ÓÃÎïÆ·:¡ìe"+"("+item.getType().getId()+")");
+					player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½ä½¿ç”¨ç‰©å“:Â§e"+"("+item.getType().getId()+")");
 				}
 		}
 		//fly
 		if(player.getAllowFlight()&&Vars.fly.get(world_s)){
 			if (player.hasPermission("banblock.ignore.*")||player.hasPermission("banblock.ignore.all")||player.hasPermission("banblock.ignore.fly")||player.hasPermission("banblock.ignore.all."+world_s)||player.hasPermission("banblock.ignore.fly."+world_s)){
-				player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-				player.sendMessage("¡ì6[Banblock]¡ì4ÄãÔÚÊÀ½ç "+ world_s +" ÔÊĞí·ÉĞĞ");
-				player.sendMessage("¡ì6[Banblock]¡ì4´ËÊÀ½çÔÚ ¡ì6Banblock ¡ì4µÄ½û·ÉÁĞ±íÖĞ");
+				player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+				player.sendMessage("Â§6[Banblock]Â§4ä½ åœ¨ä¸–ç•Œ "+ world_s +" å…è®¸é£è¡Œ");
+				player.sendMessage("Â§6[Banblock]Â§4æ­¤ä¸–ç•Œåœ¨ Â§6Banblock Â§4çš„ç¦é£åˆ—è¡¨ä¸­");
 			}
 			else{
 				player.setAllowFlight(false);
-				player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜÔÚÊÀ½ç "+ world_s +" ·ÉĞĞ");
+				player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½åœ¨ä¸–ç•Œ "+ world_s +" é£è¡Œ");
 			}
 		}
 	}
@@ -174,13 +176,13 @@ public class BanBlockListener implements Listener {
 		String world_s = player.getLocation().getWorld().getName();
 		if(player.getAllowFlight()&&Vars.fly.get(world_s)){
 			if (player.hasPermission("banblock.ignore.*")||player.hasPermission("banblock.ignore.all")||player.hasPermission("banblock.ignore.fly")||player.hasPermission("banblock.ignore.all."+world_s)||player.hasPermission("banblock.ignore.fly."+world_s)){
-				player.sendMessage("¡ì4[¾¯¸æ£¡]");					
-				player.sendMessage("¡ì6[Banblock]¡ì4ÄãÔÚÊÀ½ç "+ world_s +" ÔÊĞí·ÉĞĞ");
-				player.sendMessage("¡ì6[Banblock]¡ì4´ËÊÀ½çÔÚ ¡ì6Banblock ¡ì4µÄ½û·ÉÁĞ±íÖĞ");
+				player.sendMessage("Â§4[è­¦å‘Šï¼]");					
+				player.sendMessage("Â§6[Banblock]Â§4ä½ åœ¨ä¸–ç•Œ "+ world_s +" å…è®¸é£è¡Œ");
+				player.sendMessage("Â§6[Banblock]Â§4æ­¤ä¸–ç•Œåœ¨ Â§6Banblock Â§4çš„ç¦é£åˆ—è¡¨ä¸­");
 			}
 			else{
 				player.setAllowFlight(false);
-				player.sendMessage("¡ì6[Banblock]¡ì4Äã²»ÄÜÔÚÊÀ½ç "+ world_s +" ·ÉĞĞ");
+				player.sendMessage("Â§6[Banblock]Â§4ä½ ä¸èƒ½åœ¨ä¸–ç•Œ "+ world_s +" é£è¡Œ");
 			}
 		}
 	}
